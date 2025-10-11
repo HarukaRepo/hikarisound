@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - deasync
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - vercel
