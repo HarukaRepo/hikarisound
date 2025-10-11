@@ -16,6 +16,12 @@ importers:
       "@types/node":
         specifier: 22.15.18
         version: 22.15.18
+      "@vercel/analytics":
+        specifier: ^1.5.0
+        version: 1.5.0(next@15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      "@vercel/speed-insights":
+        specifier: ^1.2.0
+        version: 1.2.0(next@15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       axios:
         specifier: ^1.10.0
         version: 1.12.2
@@ -2951,6 +2957,35 @@ packages:
         integrity: sha512-gT2jbfZuaaCLrAxwXbRgIhGhcXbRZCG3v4TTUnjw0EJ7ArdBRxkq4msNJkbuRkCgfIK5ATmprB5t9ljvLeFDEA==,
       }
 
+  "@vercel/analytics@1.5.0":
+    resolution:
+      {
+        integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==,
+      }
+    peerDependencies:
+      "@remix-run/react": ^2
+      "@sveltejs/kit": ^1 || ^2
+      next: ">= 13"
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: ">= 4"
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      "@remix-run/react":
+        optional: true
+      "@sveltejs/kit":
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+
   "@vercel/build-utils@6.7.5":
     resolution:
       {
@@ -3049,6 +3084,32 @@ packages:
       {
         integrity: sha512-J8I0B7wAn8piGoPhBroBfJWgMEJTMEL/2o8MCoCyWdaE7MRtpXhI10pj8IvcUvAECoGJ+SM1Pm+SvBqtbtZ5FQ==,
       }
+
+  "@vercel/speed-insights@1.2.0":
+    resolution:
+      {
+        integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==,
+      }
+    peerDependencies:
+      "@sveltejs/kit": ^1 || ^2
+      next: ">= 13"
+      react: ^18 || ^19 || ^19.0.0-rc
+      svelte: ">= 4"
+      vue: ^3
+      vue-router: ^4
+    peerDependenciesMeta:
+      "@sveltejs/kit":
+        optional: true
+      next:
+        optional: true
+      react:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+      vue-router:
+        optional: true
 
   "@vercel/static-build@1.3.37":
     resolution:
@@ -11680,6 +11741,11 @@ snapshots:
 
   "@vanilla-extract/private@1.0.9": {}
 
+  "@vercel/analytics@1.5.0(next@15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)":
+    optionalDependencies:
+      next: 15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+
   "@vercel/build-utils@6.7.5": {}
 
   "@vercel/error-utils@1.0.10": {}
@@ -11867,6 +11933,11 @@ snapshots:
       ajv: 6.12.6
 
   "@vercel/ruby@1.3.76": {}
+
+  "@vercel/speed-insights@1.2.0(next@15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)":
+    optionalDependencies:
+      next: 15.3.2(@babel/core@7.28.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
 
   "@vercel/static-build@1.3.37":
     dependencies:

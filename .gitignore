@@ -1,36 +1,149 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# =========================
+# 📦 Node & Dependencies
+# =========================
+node_modules/
+.pnp/
 .pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+.bun/
+bun.lockb
 
-# testing
-/coverage
+# =========================
+# 🧪 Testing
+# =========================
+coverage/
+.nyc_output/
+jest-cache/
+jest-html-reporters-*
+*.lcov
 
-# next.js
-/.next/
-/out/
+# =========================
+# ⚡ Next.js
+# =========================
+.next/
+out/
+build/
+.next-static/
+.next/cache/
+.next/types/
+.next/server/
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# =========================
+# 🏗️ Production / Builds
+# =========================
+dist/
+build/
+tmp/
+temp/
+cache/
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
 
-# local env files
-.env*.local
-
-# vercel
+# =========================
+# 🌐 Environment & Config
+# =========================
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+.env.*.local
+.envrc
 .vercel
+.now
+.netlify
 
-# typescript
+# =========================
+# ⚙️ TypeScript / JS
+# =========================
 *.tsbuildinfo
 next-env.d.ts
+tsconfig.tsbuildinfo
+*.map
+
+# =========================
+# 🧰 Miscellaneous
+# =========================
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+*.crt
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+*.seed
+*.pid
+*.pid.lock
+
+# =========================
+# 🧑‍💻 IDE & Editor files
+# =========================
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# JetBrains (WebStorm / IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# 🐳 Docker
+# =========================
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+
+# =========================
+# 🔒 Security
+# =========================
+*.cert
+*.csr
+*.p12
+*.pfx
+
+# =========================
+# 🪣 OS / System
+# =========================
+ehthumbs.db
+Desktop.ini
+Icon?
+__MACOSX/
+$RECYCLE.BIN/
+
+# =========================
+# 🧩 Optional: Editor Backup Files
+# =========================
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# 🧠 Local Dev Tools
+# =========================
+*.local.js
+*.local.ts
+*.local.json
+*.envrc
+*.nvmrc
+*.tool-versions
