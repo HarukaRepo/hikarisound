@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import Head from "next/head";
 import { motion as m } from "framer-motion";
 import Navbar from "@/components/shared/Navbar";
@@ -5,6 +6,7 @@ import ListeningRoom from "@/components/Home/ListeningRoom";
 import FavoriteAlbums from "@/components/Home/FavTracks";
 import Link from "next/link";
 import Image from "next/image";
+import { gsap } from "gsap";
 
 export default function Home() {
   const items = [
@@ -28,6 +30,31 @@ export default function Home() {
     },
   ];
 
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".hero-text",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, stagger: 0.3, ease: "power3.out" }
+      );
+
+      gsap.to(heroRef.current, {
+        backgroundPositionY: "40%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <Head>
@@ -36,7 +63,7 @@ export default function Home() {
 
       <Navbar />
 
-      <m.div className="w-full h-[90vh] flex flex-col justify-center items-center text-center bg-white text-black px-6">
+      {/* <m.div className="w-full h-[90vh] flex flex-col justify-center items-center text-center bg-white text-black px-6">
         <m.h1
           className="text-5xl md:text-6xl font-bold mb-4"
           whileHover={{ color: "#51FF76FF" }}
@@ -63,6 +90,46 @@ export default function Home() {
             Explore My Setup
           </m.button>
         </Link>
+      </m.div> */}
+      <m.div
+        ref={heroRef}
+        className="w-full h-[90vh] flex flex-col justify-center items-center text-center text-black px-6 relative overflow-hidden bg-cover bg-center"
+        // style={{
+        //   backgroundImage:
+        //     "url('/images/after-hours-apple-music.jpg')",
+        // }}
+      >
+        {/* <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]" /> */}
+
+        <div className="relative z-10">
+          <m.h1
+            className="hero-text text-5xl md:text-6xl font-bold mb-4"
+            whileHover={{ color: "#51FF76FF" }}
+            transition={{ duration: 0.3 }}
+          >
+            Experience True Sound.
+          </m.h1>
+
+          <p className="hero-text text-lg md:text-xl text-gray-700 max-w-2xl mb-8">
+            Perjalanan pribadi saya dalam dunia audio murni — menjelajahi
+            presisi, kehangatan, dan emosi.
+          </p>
+
+          <Link href="/id/showcase" passHref>
+            <m.button
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "#51FF76FF",
+                color: "#000",
+              }}
+              transition={{ duration: 0.2 }}
+              className="hero-text px-8 py-3 border border-black rounded-md font-medium hover:text-black bg-transparent"
+            >
+              Explore My Setup
+            </m.button>
+          </Link>
+        </div>
       </m.div>
 
       <section className="w-full bg-white text-black py-20 px-6 md:px-16">
